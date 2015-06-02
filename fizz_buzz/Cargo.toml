@@ -1,0 +1,18 @@
+[package]
+name = "fizz_buzz"
+version = "0.1.0"
+authors = ["Casey Allred <sbditto@gmail.com>"]
+
+[lib]
+name = "awesome"
+path = "src/lib.rs"
+
+[dependencies]
+iron = "*"
+router = "*"
+mount = "*"
+url = "*"
+
+[dependencies.staticfile]
+git = "https://github.com/iron/staticfile.git"
+

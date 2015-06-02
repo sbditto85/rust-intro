@@ -1,0 +1,68 @@
+<html>
+  <head>
+    <title>Rusty Fib'n'Fizz</title>
+    <script src="/jcubic-jquery.terminal-fc76ddd/js/jquery-1.7.1.min.js"></script>
+    <script src="/jcubic-jquery.terminal-fc76ddd/js/jquery.mousewheel-min.js"></script>
+    <script src="/jcubic-jquery.terminal-fc76ddd/js/jquery.terminal-min.js"></script>
+    <link href="/jcubic-jquery.terminal-fc76ddd/css/jquery.terminal.css" rel="stylesheet"/>
+    <style>
+      body { background: #000 none repeat scroll 0 0;color: #fff; }
+      #console { border: 1px dashed white; height: 200px; margin-left: 47px;margin-top: 0; width: 558px; }
+      pre { margin: 0 }
+      .terminal, .cmd { color: #fff; font-size: 17px; }
+    </style>
+  </head>
+  <body>
+    <pre>
+      ------------------------------------------------------------------------------------
+      |                                                                                  |
+      |                                                                                  |
+      |                                                                                  |
+      | Welcome to the Rusty Fib'n'Fizz                                                  |
+      |                                                                                  |
+      |                                                                                  |
+      |                                                                                  |</pre>
+    <div id="console"></div>
+    <pre>
+      |                                                                                  |
+      |                                                                                  |
+      |                                                                                  |
+      | Thanks for Coming!                                                               |
+      |                                                                                  |
+      |                                         Powered by http://terminal.jcubic.pl/    |
+      |                                                                                  |
+      ------------------------------------------------------------------------------------</pre>
+    <script type="text/javascript">
+    jQuery(function($, undefined) {
+        $('#console').terminal(function(command, term) {
+            if (command !== '') {
+                if(command.indexOf("fizzbuzz") === 0) {
+                    var numbers = command.substr(8);
+                    $.get("/api/fizzbuzz/" + numbers, {}, function(data) {
+                        term.echo(data);
+                    });
+                } else if(command.indexOf("fib_rec") === 0) {
+                    var numbers = command.substr(7);
+                    $.get("/api/fib_rec/" + numbers, {}, function(data) {
+                        term.echo(data);
+                    });
+                } else if(command.indexOf("fib") === 0) {
+                    var numbers = command.substr(3);
+                    $.get("/api/fib/" + numbers, {}, function(data) {
+                        term.echo(data);
+                    });
+                } else {
+                    term.echo("Syntax Error");
+                }
+            } else {
+                term.echo('');
+            }
+        }, {
+            greetings: "Rusty Fib'n'Fizz\nWelcome,Lets get Fizzin'",
+            name: 'fibnfizz',
+            height: 200,
+            prompt: "Fib'n'Fizz> "});
+    });
+    </script>
+  </body>
+</html>

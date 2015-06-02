@@ -51,8 +51,8 @@
           <h3>Overview</h3>
           <ul>
             <li>Why Rust?</li>
-            <li>Hello World!</li>
             <li>Borrowing and Lifetimes</li>
+            <li>&amp;str and String</li>
             <li>Memory and Mutability</li>
             <li>Concurrency</li>
             <li>Error Handling</li>
@@ -60,23 +60,57 @@
           </ul>
         </section>
         <section>
-          <h3>Why Rust?</h3>
-          <p><small>Why create a new language anyways?
-              We already have what we need.</small></p>
+          <section>
+            <h3>Why Rust?</h3>
+            <p><small>Why create a new language anyways?
+                We already have what we need.</small></p>
+            <aside class="notes">
+              <ul>
+                <li>We already have C for low low level programming ranging from go to python to ... why do we need another language?</li>
+                <li>Each language provides trade offs.</li>
+                <li>Some are faster at development and handle all the little details.</li>
+                <li>Others a faster at execution, but require a better understanding of the system and memory.</li>
+              </ul>
+            </aside>
+          </section>
+          <section>
+            <h3>Spectrum of Control and Safety</h3>
+            <img src="scale_of_safety.png" />
+            <aside class="notes">
+              <ul>
+                <li>Typically a language offers either safety or control.</li>
+                <li>Rusts goal is to offer both</li>
+              </ul>
+            </aside>
+          </section>
         </section>
         <section>
-          <h3>Hello World!</h3>
-          <pre><code data-trim contenteditable class="rust">
-fn main () {
-    let str = "Gophers";
-    println!("Hello {}", str);
-}
-          </code></pre>
-          <a target="_blank" href="http://is.gd/NtEJCJ">[[ Play Link ]]</a>
+          <section>
+            <h3>Borrowing and Lifetimes</h3>
+            <p>bracket bodies unless otherwise specified</p>
+          </section>
+          <section>
+            <h3>Resources</h3>
+            <p>the rust book yo</p>
+          </section>
         </section>
         <section>
-          <h3>Borrowing and Lifetimes</h3>
-          <p>bracket bodies unless otherwise specified</p>
+          <section>
+            <h3>&amp;str and String</h3>
+          </section>
+          <section>
+            <h3>Generalized Rule</h3>
+            <p>&amp;str - when you don't need ownership</p>
+            <p>String - when you do need ownership</p>
+          </section>
+          <section>
+            <h3>Resources</h3>
+            <ul>
+              <li><a href="http://hermanradtke.com/2015/05/03/string-vs-str-in-rust-functions.html">Using &str vs String</a></li>
+              <li><a href="http://hermanradtke.com/2015/05/06/creating-a-rust-function-that-accepts-string-or-str.html">Accepting a string</a></li>
+              <li><a href="http://hermanradtke.com/2015/05/29/creating-a-rust-function-that-returns-string-or-str.html">returning a string</a></li>
+            </ul>
+          </section>
         </section>
         <section>
           <h3>Memory and Mutability</h3>
@@ -85,7 +119,21 @@ fn main () {
           <h3>Concurrency</h3>
         </section>
         <section>
-          <h3>Error Handling</h3>
+          <section>
+            <h3>Error Handling</h3>
+          </section>
+          <section>
+            <h3>To Panic or not to Panic</h3>
+            <ul>
+              <li>No recoverable exceptions</Li>
+              <li>Option</li>
+              <li>Result</li>
+            </ul>
+          </section>
+          <section>
+            <h3>Resources</h3>
+
+          </section>
         </section>
         <section>
           <h3>Misc/Examples</h3>
@@ -94,6 +142,11 @@ fn main () {
           <p>let _: () = [variable];</p>
           <p>multirust</p>
           <p>cargo rustc --bin rusty-magento -- -Z unstable-options --pretty=expanded</p>
+          <p><a href="https://www.youtube.com/watch?v=agzf6ftEsLU">Intro to Rust</a></p>
+          <p><a href="http://chrismorgan.info/blog/rust-fizzbuzz.html">FizzBuzz</a></p>
+        </section>
+        <section>
+          <h3>Conclusion</h3>
         </section>
         <section>
           <h3>Questions?</h3>
