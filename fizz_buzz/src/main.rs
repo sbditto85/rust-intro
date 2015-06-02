@@ -58,6 +58,7 @@ fn main() {
         let f_arc = Arc::new(Mutex::new(f));
         
         for (i, n) in  ns.iter().enumerate() {
+            //Maybe a little smelly? not sure how else to do this.
             let tx = tx.clone();
             let f = f_arc.clone();
             let i_clone = i.clone();
