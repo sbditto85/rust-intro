@@ -7,7 +7,7 @@
     <link href="/jcubic-jquery.terminal-fc76ddd/css/jquery.terminal.css" rel="stylesheet"/>
     <style>
       body { background: #000 none repeat scroll 0 0;color: #fff; }
-      #console { border: 1px dashed white; height: 200px; margin-left: 47px;margin-top: 0; width: 558px; }
+      #console { border: 1px dashed white; height: 200px; margin-left: 50px; margin-top: 0; width: 627px; }
       pre { margin: 0 }
       .terminal, .cmd { color: #fff; font-size: 17px; }
     </style>
@@ -36,7 +36,12 @@
     jQuery(function($, undefined) {
         $('#console').terminal(function(command, term) {
             if (command !== '') {
-                if(command.indexOf("fizzbuzz") === 0) {
+                if(command.indexOf("fizzbuzz_enum") === 0) {
+                    var numbers = command.substr(13);
+                    $.get("/api/fizzbuzz_enum/" + numbers, {}, function(data) {
+                        term.echo(data);
+                    });
+                } else if(command.indexOf("fizzbuzz") === 0) {
                     var numbers = command.substr(8);
                     $.get("/api/fizzbuzz/" + numbers, {}, function(data) {
                         term.echo(data);
