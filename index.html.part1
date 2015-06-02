@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+
+    <title>Rust Intro for Gophers</title>
+
+    <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+    <meta name="author" content="Hakim El Hattab">
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/black.css" id="theme">
+
+    <!-- Code syntax highlighting -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+
+    <!--[if lt IE 9]>
+        <script src="lib/js/html5shiv.js"></script>
+        <![endif]-->
+  </head>
+
+  <body>
+
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <h3>Rust Intro for Gophers</h3>
+          <p>
+            <small>Created by <a href="http://programwith.us">Casey Allred</a>
+              / <a href="http://twitter.com/sbditto85">@sbditto85</a>
+            </small>
+          </p>
+          <h6>Slides at <a href="http://sbditto85.github.io/rust-intro">http://sbditto85.github.io/rust-intro</a></h6>
+        </section>
+        <section>
+          <h3>Overview</h3>
+          <ul>
+            <li>Why Rust?</li>
+            <li>Borrowing and Lifetimes</li>
+            <li>&amp;str and String</li>
+            <li>Memory and Mutability</li>
+            <li>Concurrency</li>
+            <li>Error Handling</li>
+            <li>Misc/Examples</li>
+          </ul>
+        </section>
+        <section>
+          <section>
+            <h3>Why Rust?</h3>
+            <p><small>Why create a new language anyways?
+                We already have what we need.</small></p>
+            <aside class="notes">
+              <ul>
+                <li>We already have C for low low level programming ranging from go to python to ... why do we need another language?</li>
+                <li>Each language provides trade offs.</li>
+                <li>Some are faster at development and handle all the little details.</li>
+                <li>Others a faster at execution, but require a better understanding of the system and memory.</li>
+              </ul>
+            </aside>
+          </section>
+          <section>
+            <h3>Spectrum of Control and Safety</h3>
+            <img src="scale_of_safety.png" />
+            <aside class="notes">
+              <ul>
+                <li>Typically a language offers either safety or control.</li>
+                <li>Rusts goal is to offer both</li>
+              </ul>
+            </aside>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h3>Borrowing and Lifetimes</h3>
+            <p>bracket bodies unless otherwise specified</p>
+          </section>
+          <section>
+            <h3>Resources</h3>
+            <p>the rust book yo</p>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h3>&amp;str and String</h3>
+          </section>
+          <section>
+            <h3>Generalized Rule</h3>
+            <p>&amp;str - when you don't need ownership</p>
+            <p>String - when you do need ownership</p>
+          </section>
+          <section>
+            <h3>Resources</h3>
+            <ul>
+              <li><a href="http://hermanradtke.com/2015/05/03/string-vs-str-in-rust-functions.html">Using &str vs String</a></li>
+              <li><a href="http://hermanradtke.com/2015/05/06/creating-a-rust-function-that-accepts-string-or-str.html">Accepting a string</a></li>
+              <li><a href="http://hermanradtke.com/2015/05/29/creating-a-rust-function-that-returns-string-or-str.html">returning a string</a></li>
+            </ul>
+          </section>
+        </section>
+        <section>
+          <h3>Memory and Mutability</h3>
+        </section>
+        <section>
+          <h3>Concurrency</h3>
+        </section>
+        <section>
+          <section>
+            <h3>Error Handling</h3>
+          </section>
+          <section>
+            <h3>To Panic or not to Panic</h3>
+            <ul>
+              <li>No recoverable exceptions</Li>
+              <li>Option</li>
+              <li>Result</li>
+            </ul>
+          </section>
+          <section>
+            <h3>Resources</h3>
+
+          </section>
+        </section>
+        <section>
+          <h3>Misc/Examples</h3>
+          <p>strings</p>
+          <p>http://arewewebyet.com/</p>
+          <p>let _: () = [variable];</p>
+          <p>multirust</p>
+          <p>cargo rustc --bin rusty-magento -- -Z unstable-options --pretty=expanded</p>
+          <p><a href="https://www.youtube.com/watch?v=agzf6ftEsLU">Intro to Rust</a></p>
+          <p><a href="http://chrismorgan.info/blog/rust-fizzbuzz.html">FizzBuzz</a></p>
+        </section>
+        <section>
+          <h3>Conclusion</h3>
+        </section>
+        <section>
+          <h3>Questions?</h3>
+          <p>Casey Allred</p>
+          <p>@sbditto85</p>
+          <p>sbditto85@gmail.com</p>
+          <p>programwith.us</p>
+        </section>
+      </div>
+    </div>
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+    <script>
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+      controls: true,
+      progress: true,
+      history: true,
+      center: true,
+
+      transition: 'convex', // none/fade/slide/convex/concave/zoom
+
+      // Optional reveal.js plugins
+      dependencies: [
+      { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+      { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      { src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+      { src: 'plugin/zoom-js/zoom.js', async: true },
+      { src: 'plugin/notes/notes.js', async: true }
+      ]
+      });
+
+    </script>
+
+  </body>
+</html>
