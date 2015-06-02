@@ -46,6 +46,9 @@ pub enum FizzBuzz {
     Fizz,
     Number(u64),
 }
+trait FizzBuzzer {
+    fn fizzbuzz(u64) -> String;
+}
 impl Display for FizzBuzz {
     fn fmt(&self, f: &mut Formatter) -> Result<(), Error> {
         match *self {

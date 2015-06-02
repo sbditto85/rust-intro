@@ -65,6 +65,7 @@ fn main() {
             let n_clone = n.clone();
             thread::spawn(move || {
                 let answer = f.lock().unwrap()(n_clone);
+                //thread::sleep_ms(n_clone as u32 * 10);
 
                 if i_clone == 0 {
                     tx.send(answer).unwrap();
